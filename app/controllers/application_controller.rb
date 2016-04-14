@@ -1,11 +1,11 @@
 class ApplicationController < ActionController::API
-  before_action :authenticate
+  before_action :authenticate_request
 
   helper_method :current_user
 
   protected
 
-  def authenticate
+  def authenticate_request
     return head 401 unless current_user
   end
 
