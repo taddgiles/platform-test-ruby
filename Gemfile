@@ -11,7 +11,9 @@ gem 'bcrypt'
 gem 'jwt'
 gem 'faker'
 
-gem 'spring', :group => :development
+gem 'rails_12factor', group: :production
+
+gem 'spring', group: :development
 
 
 
