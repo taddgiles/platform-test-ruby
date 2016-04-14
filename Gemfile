@@ -3,6 +3,8 @@ ruby '2.3.0'
 
 gem 'rails', '4.2.6'
 gem 'rails-api'
+gem 'puma'
+
 gem 'mongoid'
 gem 'bson_ext'
 gem 'bcrypt'
