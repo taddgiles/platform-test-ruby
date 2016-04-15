@@ -15,8 +15,7 @@ class ApplicationController < ActionController::API
 
   def user_via_bearer_token
     return false unless bearer_token
-    decoded_token = JWT.decode bearer_token,
-                    PlatformTestRuby::Application.config.secret_token
+    decoded_token = JWT.decode bearer_token, ENV['JWT_SECRET'] || 'secret'
     User.find(decoded_token.first['user_id'])
   end
 
