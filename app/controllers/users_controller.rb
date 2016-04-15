@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     return head 401 unless @user.authenticate(params[:password])
 
     payload = { user_id: @user.id.to_s }
-    jwt = JWT.encode payload, PlatformTestRuby::Application.config.secret_token
+    jwt = JWT.encode payload, ENV['JWT_SECRET'] || 'secret'
 
     render json: { auth_token: jwt }, status: :ok
   end
